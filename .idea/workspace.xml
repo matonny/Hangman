@@ -1,9 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="Hangman" targetName="Hangman" />
+    </generated>
+  </component>
   <component name="CMakeSettings">
     <configurations>
       <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
     </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d0bf8031-ba6a-4714-9363-aac0ce2a7a52" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/mateusz.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Hangman.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Hangman.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Tick and Toe/Tick and Toe" beforeDir="false" afterPath="$PROJECT_DIR$/../Tick and Toe/Tick and Toe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main.cpp" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1cOy342x8r6PEJZfYX7VwqQ5mw8" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C/C++" />
   </component>
   <component name="RunManager">
     <configuration name="Hangman" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Hangman" TARGET_NAME="Hangman" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Hangman" RUN_TARGET_NAME="Hangman">
@@ -11,5 +69,71 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="586" y="387" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1590429195023">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="586" y="387" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1680.1050@0.0.1680.1050" timestamp="1590429195023" />
+    <state width="1638" height="295" key="GridCell.Tab.0.bottom" timestamp="1590737403654">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="295" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1590737403654" />
+    <state width="1638" height="295" key="GridCell.Tab.0.center" timestamp="1590737403653">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="295" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1590737403653" />
+    <state width="1638" height="295" key="GridCell.Tab.0.left" timestamp="1590737403652">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="295" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1590737403652" />
+    <state width="1638" height="295" key="GridCell.Tab.0.right" timestamp="1590737403653">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="295" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1590737403653" />
+    <state width="1638" height="364" key="GridCell.Tab.1.bottom" timestamp="1590673298921">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="364" key="GridCell.Tab.1.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1590673298921" />
+    <state width="1638" height="364" key="GridCell.Tab.1.center" timestamp="1590673298920">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="364" key="GridCell.Tab.1.center/0.0.1680.1050@0.0.1680.1050" timestamp="1590673298920" />
+    <state width="1638" height="364" key="GridCell.Tab.1.left" timestamp="1590673298919">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="364" key="GridCell.Tab.1.left/0.0.1680.1050@0.0.1680.1050" timestamp="1590673298919" />
+    <state width="1638" height="364" key="GridCell.Tab.1.right" timestamp="1590673298920">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="364" key="GridCell.Tab.1.right/0.0.1680.1050@0.0.1680.1050" timestamp="1590673298920" />
+    <state x="341" y="164" key="SettingsEditor" timestamp="1590429331285">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="341" y="164" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1590429331285" />
+    <state x="628" y="446" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590737242573">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="628" y="446" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1680.1050@0.0.1680.1050" timestamp="1590737242573" />
+    <state x="562" y="317" key="refactoring.ChangeSignatureDialog" timestamp="1590652446364">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="562" y="317" key="refactoring.ChangeSignatureDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1590652446364" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1590737388670">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1590737388669" />
   </component>
 </project>
