@@ -11,4 +11,10 @@ iostream
 -
 fstream
 -
+sstream
+-
+vector
+-
+random
+-
 
