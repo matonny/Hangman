@@ -7,11 +7,7 @@
 void randomCategory();
 
 void chooseCategory();
-
-void quit();
-
 std::vector<std::vector<std::string>> getWords();
-
 int getRandomFromRange(const int &min, const int &max);
 void gameLoop(const std::string &word);
 void printHUD(const std::vector<char> &characters, const std::vector<bool> &guessedCharacters, const int &lives);
@@ -19,12 +15,12 @@ bool isLetter(const char &character);
 std::vector<int> isInWord(const std::vector<char> &charactersOfWord, const char &testedCharacter);
 std::vector<bool> updateGuessedLetters(std::vector<bool> guessedLetters, std::vector<int> correctEntries);
 bool isGameWon(const std::vector<bool> &guessedLetter);
+void printCategories(const std::vector<std::string> &categories);
+bool isProperCategoryNumber(const char &testedCharacter, const int &categoriesNumber);
 
 int main()
 {
-    bool gameOn = true;
-
-    while (gameOn)
+    while (true)
     {
         std::cout << "Welcome to Hangman! Choose game mode by typing its number: " << std::endl;
         std::cout << "1. Random category" << std::endl << "2. Choose category" << std::endl << "3. Quit" << std::endl;
@@ -38,7 +34,7 @@ int main()
             chooseCategory();
         } else if (option == "3")
         {
-            gameOn = false;
+            break;
         } else
         {
             std::cout << "This is not a proper game mode" << std::endl;
@@ -50,15 +46,8 @@ void randomCategory()
 {
     std::cout << "RANDOM CATEGORY " << std::endl;
     std::vector<std::vector<std::string> > allWords = getWords();
-    for (int i = 0; i < allWords.size(); i++)
-    {
-        std::cout << "Category: " << allWords[i][0] << std::endl;
-        for (int j = 1; j < allWords[i].size(); j++)
-        {
-            std::cout << allWords[i][j] << std::endl;
-        }
-    }
     int category = getRandomFromRange(0, allWords.size() - 1);
+    std::cout << "The category is: " << allWords[category][0] << std::endl;
     int word = getRandomFromRange(1, allWords[category].size()-1);
     std::string generatedWord = allWords[category][word];
     gameLoop(generatedWord);
@@ -67,10 +56,27 @@ void randomCategory()
 void chooseCategory()
 {
     std::cout << "CHOSE CATEGORY" << std::endl;
-}
-
-void quit()
-{
+    std::vector<std::vector<std::string> > allWords = getWords();
+    std::vector<std::string> categories = {};
+    for(int i = 0; i < allWords.size(); i++){
+        categories.push_back(allWords[i][0]);
+    }
+    printCategories(categories);
+    std::string pickedCategory = "";
+    while(true)
+    {
+        std::cin >> pickedCategory;
+        if (pickedCategory.size() == 1 && isProperCategoryNumber(pickedCategory.at(0), categories.size()))
+        {
+            int category = stoi(pickedCategory)-1;
+            int word = getRandomFromRange(1, allWords[category].size()-1);
+            std::string pickedWord = allWords[category][word];
+            gameLoop(pickedWord);
+            break;
+        }else{
+            std::cout << "This is not a proper category, pick a category by typing its number" << std::endl;
+        }
+    }
 
 }
 
@@ -125,18 +131,30 @@ void gameLoop(const std::string &wordToGuess)
                 std::cout << "Well done, you guessed the letter!" << std::endl;
                 guessed = updateGuessedLetters(guessed, matchingEntries);
                 if(isGameWon(guessed)){
-                    std::cout << "Brawo, wygrałeś!" << std::endl;
+                    std::cout << "Great job! You win!" << std::endl;
                     break;
                 }
             }else{
                 std::cout << "You missed!" << std::endl;
                 lives--;
                 if(lives == 0){
-                    std::cout << "GAME OVER, następnym razem pójdzie Ci lepiej! :)" << std::endl;
+                    std::cout << "You lose. The word is: " << wordToGuess << std::endl;
                 }
             }
 
-        } else
+        }else if(answer == "word")
+        {
+            std::cout << "What is the answer? " << std::endl;
+            std::cin >> answer;
+            if(answer == wordToGuess){
+                std::cout << "Great job! You guessed the correct answer. Going back to menu" << std::endl;
+                break;
+            }else{
+                std::cout << "That's not the correct answer, you lose. The word is: " << wordToGuess << std::endl;
+                break;
+            }
+        }
+        else
         {
             std::cout << "Please type a lowercase or uppercase letter" << std::endl;
         }
@@ -157,7 +175,7 @@ void printHUD(const std::vector<char> &characters, const std::vector<bool> &gues
             std::cout << "_";
         }
     }
-    std::cout << std::endl;
+    std::cout << std::endl << "Type \"word\" if you're ready to guess the word. Remember that if you don't get it right, you will lose! " << std::endl;
 }
 bool isLetter (const char &character){
     if(character < 91 && character > 64){
@@ -191,4 +209,17 @@ bool isGameWon(const std::vector<bool> &guessedLetter){
         }
     }
     return allTrue;
+}
+void printCategories(const std::vector<std::string> &categories){
+    std::cout << "Pick category by typing its number: " << std::endl;
+    for(int i = 0; i < categories.size(); i++){
+        std::cout << i+1 << ". " << categories[i] << std::endl ;
+    }
+}
+bool isProperCategoryNumber(const char &testedCharacter, const int &categoriesNumber){
+    if(testedCharacter > 48 && testedCharacter <= (48+categoriesNumber)){
+        return true;
+    }else{
+        return false;
+    }
 }
