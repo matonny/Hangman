@@ -1,0 +1,5 @@
+Animals frog turtle bee lion parrot cat dog rat mouse caterpillar tiger cow 
+Careers programmer musician guitarist doctor physiotherapist builder baker postman teacher 
+Colours blue green red black yellow white turquoise magenta purple 
+Cities Warsaw Gdansk Edinburgh Cracow Glasgow London Poznan 
+Items board book bike 

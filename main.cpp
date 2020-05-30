@@ -3,6 +3,7 @@
 #include <sstream>
 #include <vector>
 #include <random>
+#include <dlfcn.h>
 
 void randomCategory();
 
@@ -46,45 +47,52 @@ void randomCategory()
 {
     std::cout << "RANDOM CATEGORY " << std::endl;
     std::vector<std::vector<std::string> > allWords = getWords();
-    int category = getRandomFromRange(0, allWords.size() - 1);
-    std::cout << "The category is: " << allWords[category][0] << std::endl;
-    int word = getRandomFromRange(1, allWords[category].size()-1);
-    std::string generatedWord = allWords[category][word];
-    gameLoop(generatedWord);
+    if(allWords.size()!= 0)
+    {
+        int category = getRandomFromRange(0, allWords.size() - 1);
+        std::cout << "The category is: " << allWords[category][0] << std::endl;
+        int word = getRandomFromRange(1, allWords[category].size() - 1);
+        std::string generatedWord = allWords[category][word];
+        gameLoop(generatedWord);
+    }
 }
 
 void chooseCategory()
 {
-    std::cout << "CHOSE CATEGORY" << std::endl;
+    std::cout << "CHOOSE CATEGORY" << std::endl;
     std::vector<std::vector<std::string> > allWords = getWords();
-    std::vector<std::string> categories = {};
-    for(int i = 0; i < allWords.size(); i++){
-        categories.push_back(allWords[i][0]);
-    }
-    printCategories(categories);
-    std::string pickedCategory = "";
-    while(true)
+    if(allWords.size() != 0)
     {
-        std::cin >> pickedCategory;
-        if (pickedCategory.size() == 1 && isProperCategoryNumber(pickedCategory.at(0), categories.size()))
+        std::vector<std::string> categories = {};
+        for (int i = 0; i < allWords.size(); i++)
         {
-            int category = stoi(pickedCategory)-1;
-            int word = getRandomFromRange(1, allWords[category].size()-1);
-            std::string pickedWord = allWords[category][word];
-            gameLoop(pickedWord);
-            break;
-        }else{
-            std::cout << "This is not a proper category, pick a category by typing its number" << std::endl;
+            categories.push_back(allWords[i][0]);
+        }
+        printCategories(categories);
+        std::string pickedCategory = "";
+        while (true)
+        {
+            std::cin >> pickedCategory;
+            if (pickedCategory.size() == 1 && isProperCategoryNumber(pickedCategory.at(0), categories.size()))
+            {
+                int category = stoi(pickedCategory) - 1;
+                int word = getRandomFromRange(1, allWords[category].size() - 1);
+                std::string pickedWord = allWords[category][word];
+                gameLoop(pickedWord);
+                break;
+            } else
+            {
+                std::cout << "This is not a proper category, pick a category by typing its number" << std::endl;
+            }
         }
     }
-
 }
 
 std::vector<std::vector<std::string>> getWords()
 {
     std::string line;
     std::vector<std::vector<std::string> > allWords = {};
-    std::ifstream words(".wordList.txt");
+    std::ifstream words("/Users/mateusz/Desktop/C++/Hangman/cmake-build-debug/.wordList.txt");
     if (words.is_open())
     {
         std::cout << "The file is loaded" << std::endl;
@@ -202,13 +210,12 @@ std::vector<bool> updateGuessedLetters(std::vector<bool> guessedLetters, std::ve
     return guessedLetters;
 }
 bool isGameWon(const std::vector<bool> &guessedLetter){
-    bool allTrue = true;
     for (int i = 0; i < guessedLetter.size() ; i++){
         if(!guessedLetter[i]){
-            allTrue = false;
+            return false;
         }
     }
-    return allTrue;
+    return true;
 }
 void printCategories(const std::vector<std::string> &categories){
     std::cout << "Pick category by typing its number: " << std::endl;
